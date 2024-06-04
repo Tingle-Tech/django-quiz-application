@@ -1,0 +1,21 @@
+{% extends base.html %}
+
+{% block content %}
+<h1>{% block quiz_title %}{% endblock %}</h1>
+    <section>    
+        <h2>{{ question_id }}. {{ question_text }}</h2>
+        <div>
+            {% for possible_answer in question.possible_answers %}
+            {{ answer_id }}. {{ possible_answer }}<br>
+            {% comment %} for each possible answer, I want to include a bubble to check before 'answer_id', {% endcomment %}
+            {% comment %} or an href that updates the user's choice, and moves to the next question {% endcomment %}
+            {% comment %} answer_id is a placeholder for A, B, C, D, etc. {% endcomment %}
+            {% comment %} question_id is a placeholder for the question number {% endcomment %}
+            {% endfor %}
+        </div>
+        <br>
+        <button>Next Question</button>
+        {% comment %} will include an href to the next question within this button {% endcomment %}
+        {% comment %} may use an extension for the button to display 'Next Question' for all but the final, which will display 'Finish' or 'Submit' {% endcomment %}
+    </section>
+{% endblock %}
