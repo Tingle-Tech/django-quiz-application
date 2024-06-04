@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+Coding Quizzes
+{% endblock %}
+
+{% block content %}
+<section id="latest-posts">
+    <h2>All Quizzes</h2>
+
+    <ul>
+        {% for quiz in quiz_list %}
+            {% include "quiz_home/includes/quiz.html" %}
+        {% endfor %}
+    
+    </ul>
+</section>
+{% endblock %}
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quizzes</title>
+</head>
+<body>
+    <section id="all-quizzes">
+        <h2>Quizzes</h2>
+
+        <ul>
+            {% for quiz in quiz_list %}
+                {% include "quiz_home/includes/quiz.html" %}
+            {% endfor %}
+        
+        </ul>
+    </section>
+    
+</body>
+</html> {% endcomment %}
